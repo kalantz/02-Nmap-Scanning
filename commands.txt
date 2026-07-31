@@ -1,0 +1,7 @@
+nmap -sn 192.168.56.0/24
+nmap -sT 192.168.56.50
+nmap -sV 192.168.56.50
+sudo nmap -sS 192.168.56.50
+sudo nmap -sU --top-ports 20 192.168.56.50
+sudo nmap -O 192.168.56.50
+nmap -sC 192.168.56.50
