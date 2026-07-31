@@ -33,7 +33,8 @@ This lab builds upon the environment created in Lab 1 by performing network reco
 
 A ping sweep (`nmap -sn`) identified active hosts on the Host-Only network before deeper enumeration.
 
-**Screenshot:** `screenshots/host-discovery-ping.png`
+![Host Discovery scan](screenshots/host-discovery-ping-sweep.png)
+
 
 **Findings**
 
@@ -47,7 +48,7 @@ A ping sweep (`nmap -sn`) identified active hosts on the Host-Only network befor
 
 A TCP Connect scan (`nmap -sT`) enumerated open TCP ports.
 
-**Screenshot:** `screenshots/tcp-connect-metaspoitable.png`
+![TCP Scan of Metasploitable](screenshots/tcp-connect-metasploitable.png)
 
 **Analysis**
 
@@ -59,7 +60,7 @@ Twenty-three TCP ports were identified. Legacy services including FTP, Telnet, H
 
 Version detection (`nmap -sV`) identified software versions running on exposed services.
 
-**Screenshot:** `screenshots/service-version-detection-metasploitable.png`
+![Version Scan of Metasploitable](screenshots/service-version-detection-metasploitable.png)
 
 **Key Findings**
 
@@ -79,7 +80,7 @@ These outdated versions are commonly referenced in penetration testing exercises
 
 A SYN scan (`sudo nmap -sS`) demonstrated a stealthier reconnaissance technique.
 
-**Screenshot:** `screenshots/syn-scan-metasploitable.png`
+![SYN Scan of Metasploitable](screenshots/syn-scan-metasploitable.png)
 
 **Analysis**
 
@@ -91,7 +92,7 @@ Results closely matched the TCP Connect scan while completing more quickly and w
 
 A Top-20 UDP scan (`sudo nmap -sU --top-ports 20`) identified UDP services.
 
-**Screenshot:** `screenshots/udp-scan-metaspointable.png`
+![UDP Scan of Metasploitable](screenshots/udp-scan-metaspointable.png)
 
 **Findings**
 
@@ -103,9 +104,9 @@ Open or filtered UDP services included DNS (53), NetBIOS Name Service (137), and
 
 OS fingerprinting (`sudo nmap -O`) was performed.
 
-**Screenshot:** `screenshots/os-detection-metasploitable.png`
+![OS fingerprinting of Metasploitable](screenshots/os-detection-metasploitable.png)
 
-**Analysis**
+**Analysis**  
 
 Nmap correctly identified the target as a Linux 2.6-based system, consistent with Metasploitable 2.
 
@@ -115,9 +116,11 @@ Nmap correctly identified the target as a Linux 2.6-based system, consistent wit
 
 Default NSE scripts (`nmap -sC`) collected additional information.
 
-**Screenshot(s):** `screenshots/default-nse-scan-metasploitable1.png` `screenshots/default-nse-scan-metasploitable2.png` `screenshots/default-nse-scan-metasploitable3.png`
+![First screenshot of NSE scripts](screenshots/default-nse-scan-metasploitable1.png) 
+![Middle screenshot of NSE scripts](screenshots/default-nse-scan-metasploitable2.png) 
+![Final screenshot of NSE scripts](screenshots/default-nse-scan-metasploitable3.png)
 
-**Highlights**
+**Highlights**  
 
 - Anonymous FTP enabled.
 - Apache and Tomcat identified.
@@ -131,7 +134,18 @@ Default NSE scripts (`nmap -sC`) collected additional information.
 
 Vulnerability scripts (`nmap --script vuln`) searched for publicly known weaknesses.
 
-**Screenshot(s):** `screenshots/vulnerability-script-scan-metasploitable1.png` ... `vulnerability-script-scan-metasploitable6.png` ... `screenshots/vulnerability-script-scan-metasploitable7.png` 
+![First screenshot of vulnerability scan](screenshots/vulnerability-script-scan-metasploitable1.png) 
+<div align="center">
+
+*⋮*
+**Additional scan output omitted for brevity**
+*⋮*
+
+</div>
+
+![Middle screenshot of vulnerability scan](screenshots/vulnerability-script-scan-metasploitable6.png) 
+
+![Final screenshot of vulnerability scan](screenshots/vulnerability-script-scan-metasploitable7.png)
 
 **Important Findings**
 
@@ -139,7 +153,7 @@ Vulnerability scripts (`nmap --script vuln`) searched for publicly known weaknes
 - UnrealIRCd Backdoor
 - SSL POODLE
 - Logjam
-- Weak Diffie-Hellman
+- Weak Diffie-Hellman 
 - CCS Injection
 - Slowloris
 - HTTP TRACE enabled
